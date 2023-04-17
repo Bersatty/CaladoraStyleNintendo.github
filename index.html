@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="Display.js" type="text/javascript"></script>
+    <script src="Calculadora.js" type="text/javascript"></script>
+    <script src="index.js" defer></script>
+    <title>Calculadora</title>
+</head>
+<body>
+   <div class="conteiner">   
+       <div class="calculadora">
+            
+                <hr class='l-1'>
+                <hr class='l-2'>
+                <hr class='l-3'>
+            
+
+            <div class="display">
+                <div class="display-2"></div>
+                <hr class='l-4'>
+                <hr class='l-5'>
+                <hr class='l-6'>
+                <hr class='l-7'>
+                <p>dot matrix whith stereo sound</p>
+                
+                <div class="pantalla">
+                    <div id="valor-Anterior"></div>
+                    <div id="valor-Actual"></div>
+                </div>
+                <span class='luz'></span>  
+            </div>
+    
+
+
+            <div class="botones">
+        
+                <button class="numoperadorC" id="numero-col-2c" onclick="display.borrartodo()">C</button>
+                <button class="numoperador" id="numerox" value="multiplicar">x</button>
+                <button class="numoperador" id="numero_" value="dividir">/</button>
+                <button class="num" id="numero7">7</button>
+                <button class="num" id="numero8" >8</button>
+                <button class="num" id="numero9">9</button>
+                <button class="numoperador" id="numeromas" value="suma">+</button>
+                <button class="num" id="numero4">4</button>
+                <button class="num" id="numero5">5</button>
+                <button class="num" id="numero6">6</button>
+                <button class="numoperador" id="numeromenos"  value="resta">-</button>
+                <button class="num" id="numero1">1</button>
+                <button class="num" id="numero2">2</button>
+                <button class="num" id="numero3">3</button>
+                <button class="numEliminar" id="numeroelim" onclick="display.borrar()">⌫</button>
+                <button class="num" id="numero0">0</button>
+                <button class="num" id="numeropunto">.</button>
+                <button class="numoperador" id="numero-col-2igual" value="igual">=</button>
+
+                
+            </div>
+        </div>
+    </div>  
+
+</body>
+
+
+</html>
