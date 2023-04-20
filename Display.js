@@ -6,6 +6,7 @@ class Display {
         this.displayValorAnterior = displayValorAnterior;
         this.valorActual ="";
         this.valorAnterior = "0";
+        this.resultado = ""
         this.calculador = new Calculadora();
         this.tipoOperacion = "";
         this.signos = {
@@ -44,14 +45,14 @@ class Display {
         const valor_Anterior = parseFloat(this.valorAnterior)
         const valor_Actual = parseFloat(this.valorActual)
         if( isNaN(valor_Actual) || isNaN(valor_Anterior))return 
-        this.valorActual = this.calculador.operacion(this.tipoOperacion,valor_Anterior , valor_Actual).toString()
+        this.resultado = this.calculador.operacion(this.tipoOperacion,valor_Anterior , valor_Actual)
+        this.valorAnterior = this.resultado.toString()
+        this.valorActual = ""
     }
 
     computar(tipo){
         this.tipoOperacion !== "igual" && this.calcular()
         this.tipoOperacion = tipo;
-        this.valorAnterior = this.valorActual || this.valorAnterior;
-        this.valorActual= "";
         this.imprimirValores()
     }
 }
