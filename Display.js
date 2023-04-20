@@ -1,10 +1,11 @@
+
+
 class Display {
     constructor(displayValorActual , displayValorAnterior){
-
         this.displayValorActual = displayValorActual;
         this.displayValorAnterior = displayValorAnterior;
         this.valorActual ="";
-        this.valorAnterior = "";
+        this.valorAnterior = "0";
         this.calculador = new Calculadora();
         this.tipoOperacion = "";
         this.signos = {
@@ -23,13 +24,13 @@ class Display {
     
     imprimirValores(){
         this.displayValorActual.textContent = this.valorActual ;
-        this.displayValorAnterior.textContent  = `${this.valorAnterior} ${this.signos[this.tipoOperacion]||""}
-        `
+        this.displayValorAnterior.textContent = `${this.valorAnterior} ${this.signos[this.tipoOperacion] ||""}`
+
     }
-    
-    borrartodo(){
+        
+    resetearValores(){
         this.valorActual="";
-        this.valorAnterior="";
+        this.valorAnterior = "0"
         this.tipoOperacion ="";
         this.imprimirValores()
     }
@@ -42,9 +43,8 @@ class Display {
     calcular(){
         const valor_Anterior = parseFloat(this.valorAnterior)
         const valor_Actual = parseFloat(this.valorActual)
-
         if( isNaN(valor_Actual) || isNaN(valor_Anterior))return 
-        this.valorActual = this.calculador[this.tipoOperacion](valor_Anterior , valor_Actual).toString()
+        this.valorActual = this.calculador.operacion(this.tipoOperacion,valor_Anterior , valor_Actual).toString()
     }
 
     computar(tipo){
@@ -53,10 +53,5 @@ class Display {
         this.valorAnterior = this.valorActual || this.valorAnterior;
         this.valorActual= "";
         this.imprimirValores()
-
     }
-
-
-
 }
-

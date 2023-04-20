@@ -1,19 +1,16 @@
 class Calculadora {
-
-    suma(num1,num2){
-        return num1 + num2
+    operacion(operador, num1, num2) {
+      switch (operador) {
+        case 'suma':
+          return num1 + num2;
+        case 'resta':
+          return num1 - num2;
+        case 'multiplicar':
+          return num1 * num2;
+        case 'dividir':
+          return num1 / num2;
+        default:
+          return num2 ;
+      }
     }
-    resta(num1,num2){
-        return num1 - num2
-    }
-    multiplicar(num1,num2){
-        return num1 * num2
-    }
-    dividir(num1,num2){
-        return num1 / num2
-    }
-   
-}
-
-
-
+  }
